@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  checkout:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: checkout
+    restart: on-failure
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+    ports:
+      - 8090:80
+    depends_on:
+      - mssql
+    command: ["dotnet", "Checkout.Api.dll"]
+
+  mssql:
+    build:
+      context: ./Sqlinit.Setup/
+      dockerfile: Dockerfile
+    restart: always
+    container_name: mssql
+    ports:
+      - 1401:1433
+    volumes:
+      - ./mssql/data:/var/lib/mssql/data
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=mssql_12345
