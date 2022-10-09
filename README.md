@@ -11,6 +11,8 @@ Run via docker
     - docker compose up
 - After you run these 2 commands, you should be able to see the swagger doc of api on: http://localhost:8090/swagger/index.html
 - Everything should be good to go and db is already setup by a sql initialization script added to mssql container
+-In order to close application please use:
+        - docker compose down
 
 Run via VS2022
     - Please restore nuget packages and make sure the solution is ready to go
