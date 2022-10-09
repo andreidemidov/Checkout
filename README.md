@@ -15,7 +15,7 @@ Run via docker
     - docker compose down
 
 Run via VS2022
-    - Please restore nuget packages and make sure the solution is ready to go
-    - Change connection string json from appsettings.json to your local sql server
-    - Execute manually initdb.sql script from Checkout/Sqlinit.Setup
-    - Application should be available to http://localhost:5251/swagger/index.html
+- Please restore nuget packages and make sure the solution is ready to go
+- Change connection string json from appsettings.json to your local sql server
+- Execute manually initdb.sql script from Checkout/Sqlinit.Setup
+- Application should be available to http://localhost:5251/swagger/index.html
